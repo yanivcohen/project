@@ -9,4 +9,18 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DempApp::Application.config.secret_key_base = '087b3f874db8465f18346205d63db4147aa7a8a5a7600853e8bfffb244e549069b76e0213fc189e9f1bec8bcf10b51f484185b48bb8641e213e8a6c761fa0843'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+DempApp::Application.config.secret_key_base = secure_token
