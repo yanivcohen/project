@@ -1,6 +1,7 @@
 DempApp::Application.routes.draw do
 
 
+  get "users/new"
   devise_for :users
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
