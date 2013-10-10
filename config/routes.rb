@@ -2,8 +2,10 @@ DempApp::Application.routes.draw do
 
 
   
+  get "professors/new"
   #devise_for :users
   resources :users
+  resources  :professors
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'

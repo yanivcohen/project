@@ -59,6 +59,9 @@ class UsersController < ApplicationController
   end
 
   private
+  def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
@@ -86,6 +89,4 @@ class UsersController < ApplicationController
   def store_location
     session[:return_to] = request.url if request.get?
   end
-
-
 end

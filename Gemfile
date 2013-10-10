@@ -9,6 +9,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem 'sunspot_rails'
+
+group :development do
+    gem 'sunspot_solr'
+  end
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -19,6 +24,8 @@ group :development, :test do
   # gem 'guard-spork', '1.5.0'
   # gem 'childprocess', '0.3.6'
 end
+
+
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
