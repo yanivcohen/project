@@ -58,15 +58,15 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-  def admin_user
+      private
+      def admin_user
       redirect_to(root_url) unless current_user.admin?
-    end
+      end
 
-    def user_params
+      def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
-    end
+      end
 
     # Before filters
 
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
         store_location
         redirect_to signin_url, notice: "Please sign in."
     end
-  end
+   end
 
     def correct_user
       @user = User.find(params[:id])
@@ -84,9 +84,9 @@ class UsersController < ApplicationController
     def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
     session.delete(:return_to)
-  end
+    end
 
-  def store_location
+    def store_location
     session[:return_to] = request.url if request.get?
-  end
+    end
 end

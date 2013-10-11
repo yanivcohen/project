@@ -1,10 +1,10 @@
 <h1>Enter New Professor</h1>
 
-<h1>Sign up</h1>
+
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@new_professor) do |f| %>
+    <%= form_for(@professor) do |f| %>
 
       <%= f.label :firstname, "First Name" %>
       <%= f.text_field :firstname %>
@@ -15,19 +15,12 @@
       <%= f.label :department, "Department" %>
       <%= f.text_field :department %>
 
-      <%= f.label :rating , "Rating out of 5" %>
-      <%= f.text_field :rating%>
-
-      <%= f.label :ratingcount, "Rating Count" %>
-      <%= f.text_field :ratingcount %>
-
-
-      <%= f.label :comments, "Comments" %>
-      <%= f.text_field :comments, class: 'comments' %>
+      
+      
 
 
       
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Save New Professor", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
