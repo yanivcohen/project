@@ -1,4 +1,5 @@
 class ProfessorsController < ApplicationController
+  
   def new
   	@professor=Professor.new
   end
@@ -10,7 +11,7 @@ class ProfessorsController < ApplicationController
     	else
       		render 'new'
     	end	
-    end 
+  end 
 
   def index
  	@search = Professor.search do

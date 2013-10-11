@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20131011064644) do
     t.datetime "updated_at"
   end
 
+  create_table "ratings", force: true do |t|
+    t.integer  "professor_id"
+    t.integer  "value"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["professor_id"], name: "index_ratings_on_professor_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
