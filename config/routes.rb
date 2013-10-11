@@ -2,6 +2,7 @@ DempApp::Application.routes.draw do
 
 
   
+  get "ratings/new"
   get "professors/new"
   #devise_for :users
   resources :users

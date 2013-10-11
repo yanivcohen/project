@@ -1,6 +1,9 @@
 class Professor < ActiveRecord::Base
-	validates :firstname, presence: true 
 
+  has_many :ratings
+
+  validates :firstname, presence: true 
+  validates_associated: :ratings
   searchable do
     text :comments
     text :firstname
