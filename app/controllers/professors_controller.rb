@@ -18,16 +18,22 @@ class ProfessorsController < ApplicationController
   end 
 
   def index
-    @search = Professor.search do
-      fulltext params[:search]
-    end
-    @matchProfessor = @search.results
-  end 
+    @professors = Professor.all
+  end
+
+#  def match
+#    @search = Professor.search do
+#      fulltext params[:search]
+#    end
+#    @matchProfessor = @search.results
+#  end 
 
   
 
   def show
     @professor=Professor.find(params[:id])
+    @ratings = @professor.ratings.paginate(page: params[:page]) # this is new
+    @rating = @professor.ratings.build
   end
   
 

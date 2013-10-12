@@ -9,8 +9,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+#gem 'sunspot_rails' ##These guys are making it hard to insert stuff
+#gem 'sunspot_solr'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

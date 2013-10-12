@@ -1,0 +1,13 @@
+<h1>Rate Professor</h1>
+<%= form_tag professors_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :id =>'searchfields' %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<ol>
+  <% @matchProfessor.each do |p|%>
+  <li><%=p.firstname%></li>
+  <%end%>
+</ol>
+

@@ -1,14 +1,12 @@
 class Professor < ActiveRecord::Base
 
-  has_many :ratings
-
+  has_many :ratings, dependent: :destroy
   
-  validates_associated :ratings
-  searchable do
-    
-    text :firstname
-    
-end
+  #validates_associated: ratings
+
+#  searchable do
+#    text :firstname  
+#  end
 
 	
 
