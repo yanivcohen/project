@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011052907) do
+ActiveRecord::Schema.define(version: 20131012020745) do
 
   create_table "professors", force: true do |t|
     t.string   "firstname"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20131011052907) do
     t.string   "department"
     t.integer  "ratingcount"
     t.integer  "rating"
-    t.string   "comments"
-    t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
