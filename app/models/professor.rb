@@ -3,11 +3,11 @@ class Professor < ActiveRecord::Base
   has_many :ratings
 
   
-  validates_associated :ratings
-  searchable do
-    
-    text :firstname
-    
+  #validates_associated :ratings
+ 
+
+ searchable do
+   text :firstname
 end
 
 	
