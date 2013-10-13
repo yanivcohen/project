@@ -1,10 +1,9 @@
 <h1>Rate Professor</h1>
 
-
-<%= form_tag professors_path, :method => :get do %>
+<%= form_tag professors_path, method: :get do %>
   <p>
-    <%= text_field_tag :search, params[:search], :id =>'searchfields' %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
@@ -17,6 +16,7 @@
 
 
 <% end %>
+
 </table>
 
 

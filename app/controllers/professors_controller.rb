@@ -18,15 +18,14 @@ class ProfessorsController < ApplicationController
   end 
 
   def index
-    @professors = Professor.all
+     if params[:query].present? 
+      @professors = Professor.search(params[:query])
+      #@professors = Professor.all 
+    else
+    @professors = Professor.all 
+  end
   end
 
-#  def match
-#    @search = Professor.search do
-#      fulltext params[:search]
-#    end
-#    @matchProfessor = @search.results
-#  end 
 
   
 

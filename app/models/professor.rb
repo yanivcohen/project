@@ -1,22 +1,16 @@
 class Professor < ActiveRecord::Base
 
   has_many :ratings, dependent: :destroy
-  
+
+include Tire::Model::Search
+include Tire::Model::Callbacks
+
+
+
   #validates_associated: ratings
 
-#  searchable do
-#    text :firstname  
-#  end
 
-	
 
-	#def self.search(search)
-  #if search
-    #find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  #else
-    #find(:all)
-  #end
-#end
 	
 
 end
