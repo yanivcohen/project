@@ -7,7 +7,12 @@
   </p>
 <% end %>
 
+<% if @professors.blank?%>
+    Could not find professor:  <%=params[:query].to_s%>
 
+
+    <%= link_to "Add this professor", '#', class: "btn btn-large btn-primary" %>
+    <% else %>
 <table>
 <th>First Name</th><th>Last Name</th><th>Department</th>
 <% @professors.each do |p| %>
@@ -19,6 +24,8 @@
 
 </table>
 
+
+<%end%>
 
 
 

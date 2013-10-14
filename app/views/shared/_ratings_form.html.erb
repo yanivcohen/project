@@ -3,6 +3,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   
     <%= f.select :value, 1..5 %>
+
+
   
     <%= f.text_area :comment, placeholder: "Comments..." %>
     <%= f.hidden_field :professor_id, value: @professor.id %>
