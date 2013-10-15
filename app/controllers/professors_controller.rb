@@ -22,7 +22,8 @@ class ProfessorsController < ApplicationController
       #@professors = Professor.search(params[:query])
       #@professors = Professor.all 
     #else
-    @professors = Professor.all 
+    @professors=Professor.search(params[:search])
+    #@professors = Professor.all
   #end
   end
 

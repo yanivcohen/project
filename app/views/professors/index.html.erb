@@ -2,13 +2,13 @@
 
 <%= form_tag professors_path, method: :get do %>
   <p>
-    <%= text_field_tag :query, params[:query] %>
+    <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
 <% if @professors.blank?%>
-    Could not find professor:  <%=params[:query].to_s%>
+    Could not find professor:  <%=params[:search].to_s%>
 
 
     <%= link_to "Add this professor", '#', class: "btn btn-large btn-primary" %>
