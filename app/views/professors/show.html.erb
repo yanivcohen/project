@@ -5,7 +5,17 @@
 
 <% @professor.ratings.each do |rating| %>
   <% unless rating.value.nil? %>
-    <p>Rating: <%= rating.value %></p>
+    <p>Rating:
+
+<% for i in 1..5 %>
+  <% if rating.value >= i %>
+    <img src="/assets/star-on-big.png">
+  <% else %>
+    <img src="/assets/star-off-big.png">
+  <% end %>
+<% end %>
+
+</p>
     <p>Comment: <%= rating.comment %></p>
     <hr>
   <% end %>

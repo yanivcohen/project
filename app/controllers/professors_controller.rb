@@ -43,5 +43,6 @@ class ProfessorsController < ApplicationController
     def professor_params
       params.require(:professor).permit(:firstname, :lastname, :department)
     end
+      
 
 end

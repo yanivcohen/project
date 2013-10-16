@@ -12,7 +12,6 @@ class Professor < ActiveRecord::Base
     end
   end
 
-
   #validates_associated: ratings
 
 

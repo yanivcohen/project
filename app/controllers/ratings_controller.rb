@@ -11,6 +11,18 @@ class RatingsController < ApplicationController
     end
   end
 
+
+  def update
+    @rating = Rating.find(params[:id])
+    @professor = Professor.find(@rating.professor_id)
+    if @rating.update_attributes(value: params[:value])
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
+
   def destroy
   end
 
