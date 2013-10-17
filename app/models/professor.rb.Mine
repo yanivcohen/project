@@ -1,0 +1,31 @@
+class Professor < ActiveRecord::Base
+
+  has_many :ratings, dependent: :destroy
+  
+<<<<<<< HEAD
+  #validates_associated: ratings
+
+#  searchable do
+#    text :firstname  
+#  end
+=======
+  #validates_associated :ratings
+ 
+
+ searchable do
+   text :firstname
+end
+>>>>>>> 096c50db655da8f634fb81d7d582150b91c73c11
+
+	
+
+	#def self.search(search)
+  #if search
+    #find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  #else
+    #find(:all)
+  #end
+#end
+	
+
+end
