@@ -2,11 +2,14 @@
 <%= form_for(@rating) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
-    <%= f.radio_button :value, 1, class: "star" %>    
+
+    <%= f.radio_button :value, 1, class: "star" %>
     <%= f.radio_button :value, 2, class: "star" %>
     <%= f.radio_button :value, 3, class: "star" %>
     <%= f.radio_button :value, 4, class: "star" %>
     <%= f.radio_button :value, 5, class: "star" %>
+
+    <!--<%= f.number_field :value, in: 1..5, class: "rating" %>-->
 
     <%= f.text_area :comment, placeholder: "Comments..." %>
     <%= f.hidden_field :professor_id, value: @professor.id %>
