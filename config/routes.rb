@@ -3,6 +3,8 @@ DempApp::Application.routes.draw do
 
   
 
+  get "books/new"
+  get "books/show"
   get "professors/new"
   #devise_for :users
   resources :users
