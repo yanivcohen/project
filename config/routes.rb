@@ -8,7 +8,7 @@ DempApp::Application.routes.draw do
   get "professors/new"
   #devise_for :users
   resources :users
-  resource :books
+  resources :books
   resources  :professors
   resources :ratings, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]

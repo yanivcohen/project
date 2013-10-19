@@ -1,0 +1,26 @@
+<h1>Post/Search for a book</h1>
+
+<%= form_tag professors_path, method: :get do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    </p>
+<% end %>
+
+
+
+
+
+
+<table >
+  <tr><th>Title</th><th>Edition</th><th>Author</th><th>ISBN</th></tr>
+  <% @books.each do |b| %>
+      <tr><td><%=b.title%></td><td><%=b.edition%></td><td><%=b.author%></td><td><%=b.isbn%></td></tr>
+
+
+
+  <% end %>
+
+</table>
+
+
