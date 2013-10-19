@@ -6,7 +6,7 @@
     </list>
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8dce6571-9753-4857-80dc-aeb375943983" time="1382153618982" ignored="false" />
+    <file path="/Dummy.txt" changelist="8dce6571-9753-4857-80dc-aeb375943983" time="1382153633675" ignored="false" />
     <file path="/routes.rb" changelist="8dce6571-9753-4857-80dc-aeb375943983" time="1381724956490" ignored="false" />
     <file path="/show.html.erb" changelist="8dce6571-9753-4857-80dc-aeb375943983" time="1381725124804" ignored="false" />
     <file path="/index.html.erb" changelist="8dce6571-9753-4857-80dc-aeb375943983" time="1381983874295" ignored="false" />
@@ -639,7 +639,11 @@
       <created>1382153625581</created>
       <updated>1382153625581</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;deleted the migrate file professors&quot;">
+      <created>1382153643392</created>
+      <updated>1382153643392</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
