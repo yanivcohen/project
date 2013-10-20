@@ -9,7 +9,19 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+/*table */
+table, td, th
+{   width:50%;
+  text-align: left;
+  tr:nth-child(even) {background: white}
+  tr:nth-child(odd) {background: #c8ffff
+  }
+}
+th
+{
+   background: cornflowerblue;
+  color:black;
+}
 /* forms */
 
 .comments{
