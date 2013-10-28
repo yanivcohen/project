@@ -8,5 +8,6 @@ class CreateCopies < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :copies, [:book_id, :created_at]
   end
 end

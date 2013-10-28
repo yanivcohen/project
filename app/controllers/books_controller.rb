@@ -26,8 +26,8 @@ end
 
 def show
 @book=Book.find(params[:id])
-#@ratings = @professor.ratings.paginate(page: params[:page]) # this is new
-#@rating = @professor.ratings.build
+@copies = @book.copies.paginate(page: params[:page])
+
 end
 
 

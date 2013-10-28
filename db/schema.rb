@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20131021002953) do
     t.datetime "updated_at"
   end
 
+  add_index "copies", ["book_id", "created_at"], name: "index_copies_on_book_id_and_created_at"
+
   create_table "professors", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"

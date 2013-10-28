@@ -1,1 +1,20 @@
 <p> Title: <%=  @book.title%><br> Edition: <%=@book.edition%><br>Author:<%= @book.author%><br>ISBN:<%= @book.isbn %></h1></p>
+
+<!--<div class="span8"> -->
+  <% if @book.copies.any? %>
+      <h3>(<%= @book.copies.count %>)Offers</h3>
+    <table>
+      <th>Price</th><th>Condition</th><th>Seller</th>
+      <% @copies.each do |c| %>
+          <tr><td><%=c.price%></td><td><%=c.condition%></td><td><%=c.seller%></td><td><span class="timestamp">
+    Posted <%= time_ago_in_words(c.created_at) %> ago.
+ </span></tr>
+
+
+      <% end %>
+
+    </table>
+
+  <% end %>
+<%= will_paginate @copies %>
+
