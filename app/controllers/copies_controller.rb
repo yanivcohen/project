@@ -1,5 +1,5 @@
 class CopiesController < ApplicationController
-
+  before_action :signed_in_user
 
 
   def create
@@ -31,7 +31,7 @@ class CopiesController < ApplicationController
   private
 
   def copy_params
-    params.require(:copy).permit(:book_id, :price, :comment)
+    params.require(:copy).permit( :price, :condition, :book_id,:seller)
   end
 
 end

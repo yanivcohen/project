@@ -1,6 +1,6 @@
 <h1>Post/Search for a book</h1>
 
-<%= form_tag professors_path, method: :get do %>
+<%= form_tag books_path, method: :get do %>
     <p>
       <%= text_field_tag :search, params[:search],  placeholder: "Search for a book to buy or post..." %>
       <%= submit_tag "Search", name: nil %>

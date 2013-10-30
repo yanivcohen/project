@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_for(@copy) do |f| %>
+    <%= f.text_area :price, placeholder: "Price..." %>
+    <%= f.text_area :condition, placeholder: "Condition..." %>
+    <%= f.text_area :seller, placeholder: "How to contact you..." %>
+    <%= f.hidden_field :book_id, value: @book.id %>
+
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+  </div>
+</div>
