@@ -18,9 +18,12 @@
         <%= f.label :isbn, "ISBN" %>
         <%= f.text_field :isbn %>
 
-
-
-
+	<%= label :price, "Price..." %>
+	<%= text_field :price, label: "Price...", "size" => 10 %>
+	<%= label :condition, "Condition..." %>
+	<%= text_field :condition, placeholder: "Condition...", "size" => 50 %>
+	<%= label :seller, "How to contact you..." %>
+	<%= text_field :seller, placeholder: "How to contact you...", "size" => 50 %>
 
         <%= f.submit "Save New Book", class: "btn btn-large btn-primary" %>
     <% end %>

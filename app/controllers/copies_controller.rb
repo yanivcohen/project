@@ -28,7 +28,6 @@ class CopiesController < ApplicationController
   def destroy
   end
 
-  private
 
   def copy_params
     params.require(:copy).permit( :price, :condition, :book_id,:seller)

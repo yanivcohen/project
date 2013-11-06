@@ -1,6 +1,7 @@
 <p> Title: <%=  @book.title%><br> Edition: <%=@book.edition%><br>Author:<%= @book.author%><br>ISBN:<%= @book.isbn %></h1></p>
 <%= render 'shared/copies_form' %>
 
+
   <% if @book.copies.any? %>
       <h3>(<%= @book.copies.count %>)Offers</h3>
     <table>
