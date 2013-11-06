@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 #gem 'sunspot_rails' ##These guys are making it hard to insert stuff
 #gem 'sunspot_solr'
+gem 'googlebooks'
 gem 'tire'
 gem 'jquery-star-rating-rails'
 
