@@ -24,6 +24,19 @@ class CopiesController < ApplicationController
     end
   end
 
+  def orderCopy
+    @copy = Copy.find(params[:copy])
+    @copy.sold = true
+    @user = current_user
+    @order = Order.new(user_id: @user.id, copy_id: @copy.id)
+    if @order.save and @copy.save
+      flash[:success] = "Book Ordered."
+      redirect_to @user
+    else
+      @book = Book.find(@copy.book_id)
+      redirect_to @book
+    end
+  end
 
   def destroy
   end

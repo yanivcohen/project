@@ -6,6 +6,28 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+
+
+      
+
     </section>
   </aside>
+</div>
+
+<div>
+  <h1>Recommended for you:</h1>
+  <%= render 'shared/recommendations' %>
+</div>
+
+
+<div>
+  <% if Order.where("user_id = ?", current_user.id).count > 0 %>
+    <h1>Books you have ordered:</h1>
+      <% Order.where("user_id = ?", current_user.id).each do |record| %>
+        <% c = Copy.find(record.copy_id) %>
+        <% b = Book.find(c.book_id) %>
+        <p><i><%= b.title %></i> by <%= b.author %>   contact:<%= c.seller %> </p>
+
+      <% end %>
+  <% end %>
 </div>

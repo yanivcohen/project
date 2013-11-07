@@ -13,9 +13,9 @@
 
 
 <table >
-  <tr><th>Title</th><th>Edition</th><th>Author</th><th>ISBN</th></tr>
+  <tr><th>Title</th><th>Edition</th><th>Author</th><th>ISBN</th><th>Available Copies</th></tr>
   <% @books.each do |b| %>
-      <tr><td><%=b.title%></td><td><%=b.edition%></td><td><%=b.author%></td><td><%=b.isbn%></td>
+      <tr><td><%=b.title%></td><td><%=b.edition%></td><td><%=b.author%></td><td><%=b.isbn%></td><td><%= Copy.where("book_id = ? AND sold = ?", b.id, false).count %></td>
       <td><%= link_to "View", b, class: "btn" %></td></tr>
 
 
