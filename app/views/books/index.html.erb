@@ -7,22 +7,20 @@
     </p>
 <% end %>
 
-<table border="1">
- <tr>
-   <th>Title</th>
-   <th>Author</th>
-   <th>ISBN</th>
-   <th>Publisher</th>
-   <th>Date Published</th>
-   <th>Number of Pages</th>
- </tr>
- <tr> 
-   <td><%= @title %></td>
-   <td><%= @author %></td>
-   <td><%= @isbn  %></td>
-   <td><%= @publisher %></td>
-   <td><%= @date %></td>
-   <td><%= @pages %></td>
- </tr>
+
+
+
+
+
+<table >
+  <tr><th>Title</th><th>Edition</th><th>Author</th><th>ISBN</th></tr>
+  <% @books.each do |b| %>
+      <tr><td><%=b.title%></td><td><%=b.edition%></td><td><%=b.author%></td><td><%=b.isbn%></td>
+      <td><%= link_to "View", b, class: "btn" %></td></tr>
+
+
+  <% end %>
+
 </table>
+
 
