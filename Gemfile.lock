@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/bmabey/database_cleaner.git
-  revision: 6da38c4c1a565bbcc62ed9b84c2574537c6ebae2
+  revision: df55cf7b746e792dba1d11eea0d6e31e3abc7e8c
   specs:
-    database_cleaner (1.2.0)
+    database_cleaner (1.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -34,7 +34,7 @@ GEM
     ansi (1.4.3)
     arel (4.0.0)
     atomic (1.1.14)
-    bcrypt-ruby (3.0)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -66,7 +66,7 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
-    devise (3.1.1)
+    devise (3.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -74,7 +74,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.0.1)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.0)
@@ -83,7 +83,7 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.9.0)
-    gherkin (2.12.2)
+    gherkin (2.12.1)
       multi_json (~> 1.3)
     googlebooks (0.0.8)
       httparty
@@ -100,14 +100,14 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-star-rating-rails (4.0.4)
       rails (>= 3.1.0)
-    json (1.8.1)
+    json (1.8.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
-    multi_json (1.8.2)
+    multi_json (1.8.0)
     multi_test (0.0.2)
     multi_xml (0.5.5)
     nokogiri (1.6.0)
@@ -130,7 +130,7 @@ GEM
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.1)
-    rails_stdout_logging (0.0.3)
+    rails_stdout_logging (0.0.2)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
@@ -153,7 +153,7 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     rubyzip (0.9.9)
-    sass (3.2.12)
+    sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -171,7 +171,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.1)
+    sprockets-rails (2.0.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
@@ -180,7 +180,7 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
-    tire (0.6.1)
+    tire (0.6.0)
       activemodel (>= 3.0)
       activesupport
       ansi
@@ -193,7 +193,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (1.1.1)
       coffee-rails
-    tzinfo (0.3.38)
+    tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -208,7 +208,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (~> 3.0)
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-sass (= 2.3.2.0)
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)
