@@ -5,6 +5,7 @@ class CopiesController < ApplicationController
   def create
     @book = Book.find(copy_params[:book_id])
     @copy = @book.copies.build(copy_params) #find out how to refer to current professor
+    @copy.user_id = current_user.id
     if @copy.save
       flash[:success] = "Book saved."
       redirect_to @book #may want to go somewhere else
@@ -15,7 +16,7 @@ class CopiesController < ApplicationController
 
 
   def update
-    @copy = Rating.find(params[:id])
+    @copy = Copy.find(params[:id])
     @book = Book.find(@copy.book_id)
     if @copy.update_attributes(value: params[:value])
       respond_to do |format|

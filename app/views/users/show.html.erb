@@ -7,15 +7,11 @@
         <%= @user.name %>
       </h1>
 
-
-      
-
     </section>
   </aside>
 </div>
 
 <div>
-  
   <%= render 'shared/recommendations' %>
 </div>
 
@@ -29,5 +25,20 @@
         <p><i><%= b.title %></i> by <%= b.author %>   contact:<%= c.seller %> </p>
 
       <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% if Copy.where("user_id = ?", current_user.id).count > 0 %>
+    <h1>Books you are selling:</h1>
+    <table>
+      <th>Title</th><th>Author</th><th>ISBN</th><th>Price</th>
+    <% Copy.where("user_id = ?", current_user.id).each do |c| %>
+      <% b = Book.find(c.book_id) %>
+      <tr><td><i><%= b.title %></i></td>
+          <td><%= b.author %></td>
+          <td><%= b.isbn %></td>
+          <td>$<%= c.price %></td></tr>
+    <% end %>
   <% end %>
 </div>

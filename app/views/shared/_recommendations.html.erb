@@ -4,9 +4,13 @@
 <h1>Recommendations for you</h1>
 <% arr = recommend %>
 <table>
+  <% if arr.count > 0 %>
   <th>Book Name</th><th>ISBN</th>
   <% arr.each do |book| %>
-    <tr><td><%= book.title %></td><td><%= book.isbn %></td><td><%= link_to "View", book, class: "btn" %></tr>
+    <% if book != nil %>
+      <tr><td><%= book.title %></td><td><%= book.isbn %></td><td><%= link_to "View", book, class: "btn" %></tr>
+    <% end %>
+  <% end %>
   <% end %>
 
 </table>

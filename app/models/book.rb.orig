@@ -1,0 +1,24 @@
+require 'matrix'
+class Book < ActiveRecord::Base
+  has_many :copies, dependent: :destroy
+<<<<<<< HEAD
+  attr_accessor :vector
+ # serialize :book_vector
+
+  after_find do |book|
+    book.vector = YAML::load(book.book_vector)
+  end
+
+=======
+  accepts_nested_attributes_for  :copies
+>>>>>>> fae9094b8f664682ec80b60a44e6e856fda60e89
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
+
+end

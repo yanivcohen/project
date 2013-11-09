@@ -30,7 +30,8 @@ module ApplicationHelper
     
     Book.all.find_each do |book|
       bookVector = book.vector
-      sim = bookVector.normalize.inner_product userVector.normalize
+      sim = bookVector.r
+      sim = bookVector.normalize.inner_product userVector.normalize if sim != 0
       # if this option is better than the others, add it to the array
       if sim > top5num.min
         top5book[top5num.index(top5num.min)] = book

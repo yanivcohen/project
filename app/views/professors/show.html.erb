@@ -1,6 +1,15 @@
 
 <h1>Professor <%= @professor.firstname %> <%= @professor.lastname %> </h1>
 
+
+
+<h3>Rated: 
+  <% if Rating.where("professor_id = ?", @professor.id).count > 0 %>
+    (<%= Rating.where("professor_id = ?", @professor.id).average(:value).to_f %>/5) </h3>
+  <% else %>
+    Not yet rated</h3>
+  <% end %>
+
 <h3>Ratings</h3>
 
 <% @professor.ratings.each do |rating| %>
