@@ -1,12 +1,12 @@
 
 <!--partial to implement dynamic recommendation engine -->
 
-
+<h1>Recommendations for you</h1>
 <% arr = recommend %>
 <table>
   <th>Book Name</th><th>ISBN</th>
   <% arr.each do |book| %>
-    <tr><td><%= book.title %></td><td><%= book.isbn %></td><td><%= link_to "View", book %></tr>
+    <tr><td><%= book.title %></td><td><%= book.isbn %></td><td><%= link_to "View", book, class: "btn" %></tr>
   <% end %>
 
 </table>
