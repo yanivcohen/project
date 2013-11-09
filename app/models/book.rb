@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
   after_find do |book|
     book.vector = YAML::load(book.book_vector)
   end
-
+  accepts_nested_attributes_for  :copies
   def self.search(search)
     if search
       find(:all, :conditions => ['title LIKE ?', "%#{search}%"])

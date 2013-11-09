@@ -10,7 +10,7 @@ DempApp::Application.routes.draw do
   resources :users
   resources :books
   resources  :professors
-  resources :copies , only: [:create, :destroy]
+  resources :copies , only: [:create, :destroy,:new]
   resources :ratings, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
