@@ -7,8 +7,11 @@
     </p>
 <% end %>
 
-
-
+<% if @books.empty?%>
+<h4>Could not find: "<%= params[:search]%>" in our database</h4>
+<h5>Be the first to add this book<h5>
+  <%= link_to "Add new book!", books_new_path, class: "btn btn-large btn-primary" %>
+<% else%>
   <%= render 'shared/recommendations' %>
 
 <h1>All Books:</h1>
@@ -18,7 +21,7 @@
       <tr><td><%=b.title%></td><td><%=b.edition%></td><td><%=b.author%></td><td><%=b.isbn%></td><td><%= Copy.where("book_id = ? AND sold = ?", b.id, false).count %></td>
       <td><%= link_to "View", b, class: "btn" %></td></tr>
 
-
+<%end%>
   <% end %>
 
 </table>
