@@ -40,6 +40,9 @@ class CopiesController < ApplicationController
   end
 
   def destroy
+    Copy.find(params[:id]).destroy
+    flash[:success] = "Book Removed"
+    redirect_to current_user
   end
 
 

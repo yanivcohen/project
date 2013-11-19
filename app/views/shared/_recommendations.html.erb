@@ -6,7 +6,7 @@
   <h1>Recommendations for you</h1>
   <% arr = recommend %>
   <table>
-    <% if arr.count > 0 %>
+    <% if arr !=nil and arr.count > 0 %>
     <th>Book Name</th><th>ISBN</th>
       <% arr.each do |book| %>
         <% if book != nil %>

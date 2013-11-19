@@ -11,34 +11,37 @@
   </aside>
 </div>
 
-<div>
-  <%= render 'shared/recommendations' %>
-</div>
 
-
-<div>
-  <% if Order.where("user_id = ?", current_user.id).count > 0 %>
-    <h1>Books you have ordered:</h1>
-      <% Order.where("user_id = ?", current_user.id).each do |record| %>
-        <% c = Copy.find(record.copy_id) %>
-        <% b = Book.find(c.book_id) %>
-        <p><i><%= b.title %></i> by <%= b.author %>   contact:<%= c.seller %> </p>
-
-      <% end %>
-  <% end %>
-</div>
-
-<div>
-  <% if Copy.where("user_id = ?", current_user.id).count > 0 %>
-    <h1>Books you are selling:</h1>
-    <table>
-      <th>Title</th><th>Author</th><th>ISBN</th><th>Price</th>
-    <% Copy.where("user_id = ?", current_user.id).each do |c| %>
-      <% b = Book.find(c.book_id) %>
-      <tr><td><i><%= b.title %></i></td>
-          <td><%= b.author %></td>
-          <td><%= b.isbn %></td>
-          <td>$<%= c.price %></td></tr>
+<% if current_user.id == @user.id %>
+  <div>
+    <%= render 'shared/recommendations' %>
+  </div>
+  <div>
+    <% if Order.where("user_id = ?", current_user.id).count > 0 %>
+      <h1>Books you have Looked at:</h1>
+        <% Order.where("user_id = ?", current_user.id).each do |record| %>
+          <% c = Copy.find(record.copy_id) %>
+          <% b = Book.find(c.book_id) %>
+          <p><i><%= b.title %></i> by <%= b.author %>   contact:<%= c.seller %> </p>
+        <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
+  <div>
+    <% if Copy.where("user_id = ?", current_user.id).count > 0 %>
+      <h1>Books you are selling:</h1>
+      <table>
+        <th>Title</th><th>Author</th><th>ISBN</th><th>Price</th>
+      <% Copy.where("user_id = ?", current_user.id).each do |c| %>
+        <% b = Book.find(c.book_id) %>
+        <tr><td><i><%= b.title %></i></td>
+            <td><%= b.author %></td>
+            <td><%= b.isbn %></td>
+            <td>$<%= c.price %></td>
+            <td> <%= link_to "Remove", c,  method: :delete, class: "btn" %></td>
+
+</tr>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
