@@ -10,7 +10,7 @@
       <th>Price</th><th>Condition</th><th>Seller</th>
       <% @copies.all.sort_by { |c| c.price }.each do |c| %>
         <% unless c.sold %>
-          <tr><td>$<%=c.price%></td><td><%=c.condition%></td><td><%=c.seller%></td>
+          <tr><td>$<%=c.price%></td><td><%=c.condition%></td><td><%= mail_to c.seller%></td>
           <td><% if signed_in? %>
             <%= button_to "Order", createOrder_path(copy: c) , class: "btn" %>
           <% end %></td>

@@ -1,3 +1,5 @@
+require 'googlebooks'
+
 class BooksController < ApplicationController
 
 def index
@@ -9,6 +11,22 @@ end
 
 def new
   @book=Book.new
+
+  name = params[:search]
+  books = GoogleBooks.search("isbn: #{name}")
+  first_book = books.first
+   
+  if !first_book.nil?
+   @title = first_book.title
+   @author = first_book.authors
+   @isbn = first_book.isbn_10
+   @publisher = first_book.publisher
+   @date = first_book.published_date
+   @pages = first_book.page_count.to_s
+   @cover = first_book.image_link(:zoom => 1)
+  else 
+   @message = "empty"
+  end
 end
 
 def create
