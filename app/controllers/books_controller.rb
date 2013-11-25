@@ -1,14 +1,29 @@
-class BooksController < ApplicationController
+require 'googlebooks'
 
+class BooksController < ApplicationController
+  before_action :signed_in_user, only: [:create, :new]
 def index
   params[:search].present? ? @books = Book.search(params[:search]) : @books = Book.all
   #@books = Book.all
 end
-
-
-
 def new
   @book=Book.new
+
+  name = params[:search]
+  books = GoogleBooks.search("isbn: #{name}")
+  first_book = books.first
+   
+  if !first_book.nil?
+   @title = first_book.title
+   @author = first_book.authors
+   @isbn = first_book.isbn_10
+   @publisher = first_book.publisher
+   @date = first_book.published_date
+   @pages = first_book.page_count.to_s
+   @cover = first_book.image_link(:zoom => 1)
+  else 
+   @message = "empty"
+  end
 end
 
 def create
@@ -32,18 +47,14 @@ def create
   end
 
 end
-
-  def copy_params
+def copy_params
     params.require(:copy).permit( :price, :condition, :book_id,:seller)
   end
-
-
 def show
 @book=Book.find(params[:id])
 @copies = @book.copies.paginate(page: params[:page])
 @copy=@book.copies.build
 end
-
 
 private
 

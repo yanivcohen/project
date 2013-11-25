@@ -1,16 +1,61 @@
 <h1>Enter New Book</h1>
 
+ <%= form_tag metadata_path, method: :get do %>
+    <p>
+      <%= text_field_tag :search, params[:search],  placeholder:"Enter ISBN and click autocomplete... or enter information manually" %>
+      <%= submit_tag "Autocomplete", name: nil %>
+      <%= submit_tag "Enter Manually", name:'manually' %>
+    </p>
+ <% end %>
 
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@book) do |f| %>
+<% if params[:search].present? %>
+ <% if (params[:search]==@isbn) && (!@message.present?) %>
+  <%= image_tag(@cover, :alt=> "No cover available", :align=> 'right') %>
+
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@book) do |f| %>
+
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title, :value=> @title %>
+
+        <%= f.label :edition, "Edition"%>
+        <%= f.text_field :edition, placeholder: "Please Enter the edition..." %>
+
+        <%= f.label :author, "Author" %>
+        <%= f.text_field :author, :value=> @author %>
+
+        <%= f.label :isbn, "ISBN" %>
+        <%= f.text_field :isbn, :value=> @isbn %>
+
+	<%= label :price, "Price..." %>
+	<%= text_field :price, label: "Price...", "size" => 10 %>
+	<%= label :condition, "Condition..." %>
+	<%= text_field :condition, placeholder: "Condition...", "size" => 50 %>
+	<%= label :seller, "How to contact you..." %>
+	<%= text_field :seller, placeholder: "How to contact you...", "size" => 50 %>
+
+        <%= f.submit "Save New Book", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+ <% else %>
+  <p>Please enter a valid ISBN</p>
+ <% end %>
+<% end %>
+
+
+<% if params[:manually] %>
+ <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@book) do |f| %>
 
         <%= f.label :title, "Title" %>
         <%= f.text_field :title %>
 
         <%= f.label :edition, "Edition"%>
-        <%= f.text_field :edition%>
+        <%= f.text_field :edition %>
 
         <%= f.label :author, "Author" %>
         <%= f.text_field :author %>
@@ -26,6 +71,7 @@
 	<%= text_field :seller, placeholder: "How to contact you...", "size" => 50 %>
 
         <%= f.submit "Save New Book", class: "btn btn-large btn-primary" %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

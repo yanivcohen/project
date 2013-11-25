@@ -5,12 +5,12 @@
   <% if @book.copies.any? %>
       <h3>(<%= @book.copies.count %>)Offers</h3>
       <p>Prices: $<%= @copies.minimum(:price).to_f %> - $<%= @copies.maximum(:price).to_f %></p>
-      <p>Average Price: $<%= @copies.average(:price).to_f %></h4>
+      <p>Average Price: $<%= @copies.average(:price).to_f %></p>
     <table>
       <th>Price</th><th>Condition</th><th>Seller</th>
       <% @copies.all.sort_by { |c| c.price }.each do |c| %>
         <% unless c.sold %>
-          <tr><td>$<%=c.price%></td><td><%=c.condition%></td><td><%=c.seller%></td>
+          <tr><td>$<%=c.price%></td><td><%=c.condition%></td><td><%= mail_to c.seller%></td>
           <td><% if signed_in? %>
             <%= button_to "Order", createOrder_path(copy: c) , class: "btn" %>
           <% end %></td>
