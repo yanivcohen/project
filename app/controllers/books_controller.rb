@@ -1,14 +1,11 @@
 require 'googlebooks'
 
 class BooksController < ApplicationController
-
+  before_action :signed_in_user, only: [:create, :new]
 def index
   params[:search].present? ? @books = Book.search(params[:search]) : @books = Book.all
   #@books = Book.all
 end
-
-
-
 def new
   @book=Book.new
 
@@ -50,18 +47,14 @@ def create
   end
 
 end
-
-  def copy_params
+def copy_params
     params.require(:copy).permit( :price, :condition, :book_id,:seller)
   end
-
-
 def show
 @book=Book.find(params[:id])
 @copies = @book.copies.paginate(page: params[:page])
 @copy=@book.copies.build
 end
-
 
 private
 

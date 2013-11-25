@@ -9,7 +9,7 @@
 
 <% if @books.empty?%>
 <h4>Could not find: "<%= params[:search]%>" in our database</h4>
-<h5>Be the first to add this book<h5>
+<h5>Be the first to add this book</h5>
   <%= link_to "Add new book!", books_new_path, class: "btn btn-large btn-primary" %>
 <% else%>
   <%= render 'shared/recommendations' %>
