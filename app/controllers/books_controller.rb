@@ -35,7 +35,7 @@ def create
     flash[:success] = "Book saved successfully"
     params.inspect
 #    myparams=copy_params()
-    myparams={price: params[:price].values[0], condition: params[:condition].values[0], seller: params[:seller].values[0]}
+    myparams={price: params[:price].values[0], condition: params[:condition].values[0], seller: params[:seller].values[0], user_id: current_user.id}
     logger.debug "========================================="
     logger.debug myparams
     logger.debug "========================================="
