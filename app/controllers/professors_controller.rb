@@ -10,7 +10,7 @@ class ProfessorsController < ApplicationController
     @professor=Professor.new(professor_params)
     if @professor.save
       flash[:success] = "Professor saved successfuly"
-      redirect_to new_professor_path
+      redirect_to professors # used to be new_professor_path
     else
       render 'new'
     end	

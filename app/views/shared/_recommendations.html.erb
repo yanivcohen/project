@@ -3,17 +3,16 @@
 
 
 <% if current_user != nil %>
-  <h1>Recommendations for you</h1>
   <% arr = recommend %>
-  <table>
-    <% if arr !=nil and arr.count > 0 %>
-    <th>Book Name</th><th>ISBN</th>
+  <% if arr !=nil and arr.count > 0 %>
+    <h1>Recommendations for you</h1>
+    <table>
+      <th>Book Name</th><th>ISBN</th>
       <% arr.each do |book| %>
         <% if book != nil %>
           <tr><td><%= book.title %></td><td><%= book.isbn %></td><td><%= link_to "View", book, class: "btn" %></tr>
         <% end %>
       <% end %>
-    <% end %>
-
-  </table>
+    </table>
+  <% end %>
 <% end %>

@@ -13,9 +13,15 @@
 <%= link_to "Add Professor!", professors_new_path, class: "btn btn-large btn-primary" %>
 
 <table>
-<th>First Name</th><th>Last Name</th><th>Department</th>
+<th>First Name</th><th>Last Name</th><th>Department</th><th>Rated</th>
 <% @professors.each do |p| %>
-  <tr><td><%=p.firstname%></td><td><%=p.lastname%></td><td><%=p.department%></td>
+  <tr><td><%=p.firstname%></td><td><%=p.lastname%></td><td><%=p.department%></td><td>
+        <% if Rating.where("professor_id = ?", p.id).count > 0 %>
+          <%= Rating.where("professor_id = ?", p.id).average(:value).to_f %>/5
+        <% else %>
+          NA
+        <% end %>
+      </td>
       <td><%= link_to "View", p, class: "btn" %></td></tr>
 
 

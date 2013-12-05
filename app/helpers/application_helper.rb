@@ -17,6 +17,7 @@ module ApplicationHelper
   def recommend
     top5num = [0,0,0,0,0] #top five array
     top5book = [nil,nil,nil,nil,nil]
+    myBooks = Array.new #array to store books the user has "Reserved/Purchased/Checked out"
 
     #create the user profile
     arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] #may need to resize dimension count
@@ -24,11 +25,12 @@ module ApplicationHelper
 
     Order.where(user_id: current_user.id).each do |order|
       book = Book.find(Copy.find(order.copy_id).book_id)
+      myBooks.push(book.id)
       bookVector = book.vector
       userVector = userVector + bookVector
     end
     if userVector.r != 0
-      Book.all.find_each do |book|
+      Book.find(:all, :conditions => [ 'id not in(?)', myBooks]).each do |book|
         bookVector = book.vector
         sim = bookVector.r
         sim = bookVector.normalize.inner_product userVector.normalize if sim != 0
