@@ -41,7 +41,7 @@ def create
     logger.debug "========================================="
     @book.copies.build myparams
     @book.save
-    redirect_to books_new_path
+    redirect_to @book
   else
     render 'new'
   end
