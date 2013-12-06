@@ -23,10 +23,10 @@
         <% Order.where("user_id = ?", current_user.id).each do |record| %>
           <th>Title</th><th>Author</th><th>Price</th><th>Contact</th>
           <% c = Copy.find(record.copy_id) %>
-          <% b = Book.find(c.book_id) %><
+          <% b = Book.find(c.book_id) %>
           <tr><td><i><%= b.title %></i></td><td><%= b.author %></td><td>$<%= c.price %></td><td><%= c.seller %></td></tr>
         <% end %>
-      </tables
+      </table>
     <% end %>
   </div>
 

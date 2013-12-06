@@ -5,7 +5,7 @@
 <% if current_user != nil %>
   <% arr = recommend %>
   <% if arr !=nil and arr.count > 0 %>
-    <h1>Recommendations for you</h1>
+    <h1>Recommendations for you:</h1>
     <table>
       <th>Book Name</th><th>ISBN</th>
       <% arr.each do |book| %>
