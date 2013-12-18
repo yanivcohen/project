@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="3821767165">
-    <data-source source="LOCAL" name="Rails project: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="bef5c626-7045-44b7-b5e3-d153d5933297">
+    <data-source source="LOCAL" name="Rails project: development" uuid="bef5c626-7045-44b7-b5e3-d153d5933297">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries>
@@ -13,7 +14,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails project: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="d6647dc8-776d-4ff8-8508-2345747f9f3f">
+    <data-source source="LOCAL" name="Rails project: test" uuid="d6647dc8-776d-4ff8-8508-2345747f9f3f">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries>
@@ -25,7 +27,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails project: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="f1b54443-bc5d-4a14-9491-405d10b839b7">
+    <data-source source="LOCAL" name="Rails project: production" uuid="f1b54443-bc5d-4a14-9491-405d10b839b7">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/production.sqlite3</jdbc-url>
       <libraries>
