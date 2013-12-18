@@ -14,7 +14,7 @@
 
 <% if current_user.id == @user.id %>
   <div>
-    <%= render 'shared/recommendations' %>
+
   </div>
   <div>
     <% if Order.where("user_id = ?", current_user.id).count > 0 %>
