@@ -5,7 +5,7 @@ module ApplicationHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "SJSU Books Exchange "
+    base_title = "408textbooks "
     if page_title.empty?
       base_title
     else
