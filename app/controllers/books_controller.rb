@@ -16,7 +16,7 @@ def new
   if !first_book.nil?
    @title = first_book.title
    @author = first_book.authors
-   @isbn = first_book.isbn_10
+   @isbn = first_book.isbn_13
    @publisher = first_book.publisher
    @date = first_book.published_date
    @pages = first_book.page_count.to_s

@@ -12,7 +12,7 @@
         <% unless c.sold %>
           <tr><td>$<%=c.price%></td><td><%=c.condition%></td><td><%= mail_to c.seller%></td>
           <td><% if signed_in? %>
-            <%= button_to "Reserve", createOrder_path(copy: c) , class: "btn" %>
+
           <% end %></td>
 
           <td><span class="timestamp">Posted <%= time_ago_in_words(c.created_at) %> ago.</span></td>
