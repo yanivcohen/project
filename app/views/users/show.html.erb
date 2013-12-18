@@ -12,40 +12,27 @@
 </div>
 
 
-<% if current_user.id == @user.id %>
-  <div>
 
-  </div>
-  <div>
-    <% if Order.where("user_id = ?", current_user.id).count > 0 %>
-      <h1>Books you have Looked at:</h1>
-      <table>
-        <% Order.where("user_id = ?", current_user.id).each do |record| %>
-          <th>Title</th><th>Author</th><th>Price</th><th>Contact</th>
-          <% c = Copy.find(record.copy_id) %>
-          <% b = Book.find(c.book_id) %>
-          <tr><td><i><%= b.title %></i></td><td><%= b.author %></td><td>$<%= c.price %></td><td><%= c.seller %></td></tr>
-        <% end %>
-      </table>
-    <% end %>
-  </div>
+      <div>
 
-  <div>
-    <% if Copy.where("user_id = ?", current_user.id).count > 0 %>
-      <h1>Books you are selling:</h1>
-      <table>
-        <th>Title</th><th>Author</th><th>ISBN</th><th>Price</th><th></th><th></th>
-      <% Copy.where("user_id = ?", current_user.id).each do |c| %>
-        <% b = Book.find(c.book_id) %>
-        <tr><td><i><%= b.title %></i></td>
-            <td><%= b.author %></td>
-            <td><%= b.isbn %></td>
-            <td>$<%= c.price %></td>
-            <td> </td>
-            <td> <%= link_to "Remove", c,  method: :delete, class: "btn" %></td>
+        <% if Copy.where("user_id = ?", current_user.id).count > 0 %>
+          <h1>Books you are selling</h1>
+          <table>
+             <th>Title</th><th>Author</th><th>ISBN</th><th>Price</th><th></th><th></th>
+              <% Copy.where("user_id = ?", current_user.id).each do |c| %>
+                <% b = Book.find(c.book_id) %>
+                <tr><td><i><%= b.title %></i></td>
+                  <td><%= b.author %></td>
+                  <td><%= b.isbn %></td>
+                  <td>$<%= c.price %></td>
+                  <td> </td>
+                  <td> <%= link_to "Remove", c,  method: :delete, class: "btn" %></td>
 
-</tr>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
+                </tr>
+
+            <% end %>
+            </table>
+       <% end %>
+
+      </div>
+
